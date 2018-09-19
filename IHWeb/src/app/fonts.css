@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "JSans-light";
+    src: url('/src/assets/fonts/Josephin-sans-light.ttf');
+}
+@font-face {
+    font-family: "JSans-thin";
+    src: url('/src/assets/fonts/Josephin-sans-thin.ttf');
+}
+.habits-title-font{
+    font : 500 30px JSans-light;
+}
+.habits-helper-text{
+    font : 500 13px JSans-light;
+}

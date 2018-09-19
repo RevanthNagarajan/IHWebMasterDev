@@ -1,0 +1,48 @@
+@import "../styles/variables.less";
+.login-envelope{
+    background-image: url('/src/assets/images/session/login-bg-2.jpg');
+    //background-image: linear-gradient(#ff9a9e , #a1c4fd);
+    height: 726px;
+    padding: 15px;
+    opacity : 1;
+    .margin-top-10{
+        margin-top : 10px;
+    }
+    .login-box{
+        padding: 30px;
+        background: white;
+        border-radius: 7px;
+        width: 400px;
+        height: 300px;
+        position: absolute;
+        left: 100px;
+        top: 100px;
+        .login-header{
+            border-bottom: 1px solid @gray-10;
+            margin-bottom : 10px;
+        }
+        .cred-1{
+            height: 32px;
+            padding: 21px 20px 2px;
+            background-color: @gray-10;
+            opacity: 0.8;
+        }
+        .pwd{
+            font-size: 16px;
+            padding: 21px 24px 2px !important;
+        }
+        .cred-2{
+            padding: 0px;
+            opacity: 0.65;
+            input{
+                width: 330px;
+                height: 53px;
+                background-color: @gray-10;
+                border: none;
+                font-size : 20px;
+                color: @gray-33;
+                padding-left: 10px !important;
+            }
+        }
+    }
+}
