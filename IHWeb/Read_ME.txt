@@ -60,3 +60,131 @@ brew install node
 
 >>>>>>>>>>>>>To stop the server
 [[[[[Ctrl C (Only Mac)]]]]]
+
+>>>>>>>>>>>>>create routing node_modules
+Integrate routing module to app module and inject the router-app to index.html
+
+>>>>>>>>>>>>>Create components for header and footer
+Add them above and below router-app in index.html
+
+>>>>>>>>>>>>>Create service data files (ng g service data)
+Import httpclient module in it and app module. we can call http services in data services by writing functions which can be called in required components to retrieve data from those services.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Notes : 
+
+1.  If the url is  "/app?param1=habits&param2=123&id=1"
+    import { ActivatedRoute, Router } from '@angular/router';
+    //..//
+    constructor(
+		private router: Router,
+		private route : ActivatedRoute
+	) {}
+    this.route.paramMap.subscribe(
+        params => {
+            this.urlId = params.get('id');     ------> to store url data
+        }
+    );
+    this.route.queryParams.subscribe(
+        params => {
+            this.urlData = params['param1']+params['param2'];     ----> url query params
+        }
+    );
+    // if url is "/param1/:param1/param2/:param2"
+    this.param1 = this.route.snapshot.params.param1;
+    this.param2 = this.route.snapshot.params.param2;   ------> parameters
+
+
+    this.currentPath = this.router.url;    ----> To fetch url data
+    //..//
+
+2.  Http study material :   https://coursetro.com/posts/code/154/Angular-6-Tutorial---Learn-Angular-6-in-this-Crash-Course,
+                            https://angular.io/guide/http
+
+3.  (i)     URL path of window  :   window.location.pathname
+    (ii)    URL navigation end  :
+            this.router.events.pipe(
+                filter(e => e instanceof NavigationEnd)
+            )
+            .subscribe( (navEnd:NavigationEnd) => {
+                console.log(navEnd.urlAfterRedirects);
+            });
+    (iii)   URL load at different phases of page load   :
+            constructor(router: Router) {
+                router.events.subscribe((url:any) => console.log(url));
+                console.log(router.url);  // to print only path eg:"/login"
+            }
+    //https://stackoverflow.com/questions/37764665/typescript-sleep//
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ANGULAR dependencies
+
+1.  /router dependencies {
+        ActivatedRoute{
+            queryParams,
+            snapshot,
+            get()
+        },
+        Router{
+            url,
+            events{
+                NavigationStart,
+                RoutesRecognized,
+                GuardsCheckStart,
+                ChildActivationStart,
+                ActivationStart,
+                GuardsCheckEnd,
+                ResolveStart,
+                ResolveEnd,
+                ActivationEnd,
+                ChildActivationEnd,
+                NavigationEnd,
+                Scroll
+                    //events object contain//
+                    >id: 1
+                    >state: RouterStateSnapshot
+                    >root: ActivatedRouteSnapshot
+                    >url: "/login"
+                    >_root: TreeNode {value: ActivatedRouteSnapshot, children: Array(1)}
+                    >__proto__: Tree
+                    >url: "/login"
+                    >urlAfterRedirects: "/login"
+                    //..//
+            },
+            hooks{
+                beforePreActivation,
+                afterPreActivation
+            },
+            navigated,
+            navigateId,
+            currentUrlTree,
+            rawUrlTree,
+            urlSerializer,
+            urlHandlingStrategy,
+            urlUpdateStrategy
+            ...
+        },
+        ParamsMap{}
+    }
+2.  /rxjs dependencies{
+        Observable{}
+    }
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+CONCEPTS :
+
+1.  async/await with promise
+2.  router-outlet
+3.  ng-container
+4.  declaring variables
+5.  httpclient
+6.  ngFor
+7.  ngIf
+8.  pipes - https://developer.telerik.com/topics/web-development/creating-custom-filter-pipe-angular-2/
+9.  call signatures
+10. sleep
+
+
+

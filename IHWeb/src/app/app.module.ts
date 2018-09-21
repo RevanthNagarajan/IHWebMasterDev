@@ -5,12 +5,17 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { FoundationComponent } from './foundation/foundation.component';
 import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		FoundationComponent,
-		LoginComponent
+		LoginComponent,
+		HeaderComponent,
+		FooterComponent
 	],
 	imports: [
 		BrowserModule,
@@ -18,6 +23,7 @@ import { LoginComponent } from './login/login.component';
 		// FormsModule,
 		// HttpModule,
 		AppRoutingModule,
+		HttpClientModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]

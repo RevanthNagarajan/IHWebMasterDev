@@ -6,9 +6,44 @@
     font-family: "JSans-thin";
     src: url('/src/assets/fonts/Josephin-sans-thin.ttf');
 }
+@font-face {
+    font-family: "Oswald-elight";
+    src: url('/src/assets/fonts/Oswald-extra-light.ttf');
+}
+@font-face {
+    font-family: "Oswald-light";
+    src: url('/src/assets/fonts/Oswald-light.ttf');
+}
+@font-face {
+    font-family: "Roboto";
+    src: url('/src/assets/fonts/Roboto-condensed-light.ttf');
+}
+@font-face {
+    font-family: "Sans";
+    src: url('/src/assets/fonts/Sans-condensed.ttf');
+}
+@font-face {
+    font-family: "Ubuntu";
+    src: url('/src/assets/fonts/Ubuntu-light.ttf');
+}
 .habits-title-font{
     font : 500 30px JSans-light;
 }
 .habits-helper-text{
     font : 500 13px JSans-light;
+}
+.Ubuntu-one{
+    font : 500 20px Ubuntu-light;
+}
+.Oswald-one{
+    font : 500 20px Oswald-light;
+}
+.Roboto-one{
+    font : 500 20px Roboto;
+}
+.Sans-one{
+    font : 500 20px Sans;
+}
+.OswaldE-one{
+    font : 500 20px Oswald-elight;
 }
