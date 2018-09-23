@@ -101,6 +101,7 @@ Notes :
 
 2.  Http study material :   https://coursetro.com/posts/code/154/Angular-6-Tutorial---Learn-Angular-6-in-this-Crash-Course,
                             https://angular.io/guide/http
+                            https://www.techiediaries.com/angular-http-client/
 
 3.  (i)     URL path of window  :   window.location.pathname
     (ii)    URL navigation end  :
@@ -116,6 +117,10 @@ Notes :
                 console.log(router.url);  // to print only path eg:"/login"
             }
     //https://stackoverflow.com/questions/37764665/typescript-sleep//
+
+4.  Syncing Backend service -  https://medium.freecodecamp.org/the-best-ways-to-connect-to-the-server-using-angular-cli-b0c6b699716c
+
+5.  Creating Request model for services - https://nehalist.io/working-with-models-in-angular/
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 

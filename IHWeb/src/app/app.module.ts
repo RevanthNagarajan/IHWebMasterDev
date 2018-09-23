@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
+import { DataService } from './data.service';
 import { FoundationComponent } from './foundation/foundation.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
@@ -25,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 		AppRoutingModule,
 		HttpClientModule,
 	],
-	providers: [],
+	providers: [DataService],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

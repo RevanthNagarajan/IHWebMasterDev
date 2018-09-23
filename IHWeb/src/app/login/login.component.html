@@ -7,16 +7,16 @@
 		<!-- <fa name="cog" animation="spin"></fa> -->
 		<div class="margin-bottom-10">
 			<div class="same-line cred-1"><fa name="vcard-o"></fa></div>
-			<div class="same-line cred-2"><input class="Roboto-one" type="text" placeholder="Email or Phone" ng-model="loginCredential"/></div>
+			<div class="same-line cred-2"><input class="Roboto-one" type="text" placeholder="Email or Phone" #loginId/></div>
 		</div>
 		<div class="margin-bottom-10">
 			<div class="same-line cred-1 pwd"><fa name="lock"></fa></div>
-			<div class="same-line cred-2"><input class="Roboto-one" type="text" placeholder="Password" ng-model="loginCredential"/></div>
+			<div class="same-line cred-2"><input class="Roboto-one" type="text" placeholder="Password" #loginPwd/></div>
 		</div>
 		<div class="action-link right-align cursor-pointer">
 			<span>Forgot password?</span>
 		</div>
-		<div class="Roboto-one margin-top-10 btn btn-md habits-button-one"><a routerLink="/foundation">Login</a></div>
+		<div class="Roboto-one margin-top-10 btn btn-md habits-button-one" (click)="getAuthorisation(loginId.value,loginPwd.value)">Login</div>
 		<!-- <div *ngFor="let user of users$">{{user.name}}</div> -->
   </div>
 </div>
